@@ -5,7 +5,9 @@ import { doc, getFirestore, onSnapshot, serverTimestamp,setDoc, collection, dele
 import {app} from "../firebase"
 import React,{ useEffect, useState } from 'react';
 
-
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleModal } from '@/redux/slices/modalSlice';
+import { setPostId } from '@/redux/slices/postIdSlice';
 
 export default function Icons({id,uid}){
     const {data : session } = useSession();
@@ -13,6 +15,12 @@ export default function Icons({id,uid}){
     const [isLiked, setIsLiked] = useState(false);
     const [likes, setLikes] = useState([])
 
+    const dispatch = useDispatch();
+    const open = useSelector((state) => state.modal.modalState); // Access modal state from Redux
+    const handleClick = (tag) => {
+        dispatch(toggleModal(tag));
+        dispatch(setPostId(id));
+    };
     const likePost = async () => {
         if(session){
             if(isLiked){
@@ -73,6 +81,7 @@ export default function Icons({id,uid}){
         <div className="flex items-center ">
             <HiOutlineChat 
              className="h-8 w-8 cursor-pointer rounded-full transtion duration-500 ease-in-out p-2 hover:text-amber-500 hover:bg-amber-100"
+             onClick={handleClick}
             />  
         </div>
         </div>

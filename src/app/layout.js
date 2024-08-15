@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Filter from "../components/Filter";
 import SessionWrapper from "../components/SessionWrapper";
 import Providers from "@/redux/Provider";
+import CommentModal from "@/components/CommentModal";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           <Filter />
         </div>
       </div>
+      <CommentModal/>
       </body>
     </html>
     </SessionWrapper>
