@@ -6,10 +6,12 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { CiSettings } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
 export default function Sidebar() {
   const {data: session} = useSession();
+  const router = useRouter()
   console.log(session);
   const [showOptions, setShowOptions] = useState(false);
  
@@ -18,14 +20,14 @@ export default function Sidebar() {
     console.log(session);
   };
   const handleProfile = () => {
-    console.log("hey")
+    router.push('/profile');
   };
   return (
     <div className="flex flex-col p-3 justify-between h-screen">
         <div className="flex flex-col gap-4 p-3">
-        <Link href="/" className="w-16 h-16 cursor-pointer">
+        <Link href="/" className="w-16 h-16 cursor-pointer flex flex-col items-center ml-5 xl:flex-row justify-center">
             <span className="text-2xl font-bold  py-1 px-2 rounded-lg">GIT</span>
-            <span className='text-xl hidden sm:inline'>Social</span>
+            <span className='text-xl '>Social</span>
         </Link>
         <Link href="/"  className="flex items-center gap-2 p-3 hover:bg-gray-100 rounded-full transition-all duration-200 w-fit">
         <AiOutlineHome  className="w-7 h-7"/>
@@ -49,7 +51,7 @@ export default function Sidebar() {
                 </div>
                 <HiDotsHorizontal className="w-7 h-7 ml-auto xl:ml-8 hidden xl:inline" onClick={toggleOptions}/>
                 {showOptions && (
-                    <div className=" mt-2 p-2 bg-white border rounded  shadow-lg pb-5">
+                    <div className=" mt-2 p-2 bg-white border rounded  absolute shadow-lg pb-5">
                         <p className="text-gray-700 cursor-pointer rounded p-2 hover:bg-gray-200" onClick={handleProfile}>Profile</p>
                         <p className="text-gray-700 cursor-pointer rounded p-2 hover:bg-gray-200" onClick={() => signOut()}>Logout</p>
                     </div>
