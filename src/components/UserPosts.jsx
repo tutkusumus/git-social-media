@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { app } from "../firebase"
 import Post from "@/components/Post";
 
-export default function UserPosts() {
+export default function UserPosts({ setPostCount }) {
   const db = getFirestore(app);
   const { data: session } = useSession();
   const [posts, setPosts] = useState([]);
@@ -21,6 +21,7 @@ export default function UserPosts() {
           ...doc.data()
         }));
         setPosts(userPosts);
+        setPostCount(userPosts.length); 
       }
     };
 
