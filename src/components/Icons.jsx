@@ -87,7 +87,7 @@ export default function Icons({id,uid}){
         </div>
         <div className="flex items-center ">
             <HiOutlineChat 
-             className="h-8 w-8 cursor-pointer rounded-full transtion duration-500 ease-in-out p-2 hover:text-amber-500 hover:bg-amber-100"
+             className="h-8 w-8 cursor-pointer rounded-full transtion duration-500 ease-in-out p-2 hover:text-cyan-950 hover:bg-gray-200"
              onClick={handleClick}
             />  
               {comments.length > 0 && (

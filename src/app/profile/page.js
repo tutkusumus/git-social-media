@@ -18,7 +18,7 @@ export default function page() {
         </Link>
         <h2 className="text-lg">Back</h2>
       </div>
-      <div className="relative bg-green-800 h-40 w-full">
+      <div className="relative bg-teal-700 h-40 w-full">
         <img 
         src={session?.user?.image} 
         alt="user-img" 

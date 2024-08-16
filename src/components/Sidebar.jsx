@@ -58,7 +58,7 @@ export default function Sidebar() {
                 )}
               </div>
             ):(
-        <button className="font-semibold bg-amber-500 hover:brightness-95 shadow-md w-48 h-9 rounded-full text-white transition-all duration-200 hidden xl:inline"
+        <button className="font-semibold bg-cyan-950 hover:brightness-95 shadow-md w-48 h-9 rounded-full text-white transition-all duration-200 hidden xl:inline"
         onClick ={() => signIn()}
         >Sign In</button>) 
         }

@@ -110,7 +110,7 @@ export default function Input() {
                             key={tag}
                             onClick={() => handleTagClick(tag)}
                             className={`px-3 py-1 rounded-full text-xs ${
-                                selectedTags.includes(tag) ? 'bg-amber-500 text-white' : 'bg-gray-100'
+                                selectedTags.includes(tag) ? 'bg-cyan-950 text-white' : 'bg-gray-100'
                             }`}
                         >
                             {tag}
@@ -148,7 +148,7 @@ export default function Input() {
                 />
                 <button
                 disabled  = {text.trim() === '' || postLoading || imageFileUploading || selectedTags.length === 0}
-                className="mr-2 bg-amber-400 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
+                className="mr-2 bg-cyan-950 text-white px-4 py-1.5 rounded-full font-bold shadow-md hover:brightness-95 disabled:opacity-50"
                 onClick ={handleSubmit}>Post</button>
             </div>
 

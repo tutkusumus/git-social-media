@@ -23,8 +23,8 @@ export default function Filter() {
                 {availableTags.map((tag, index) => (
                     <li
                         key={index}
-                        className={`border rounded-l-lg m-2 cursor-pointer pl-8 bg-amber-300 border-r-8 border-amber-500
-                            ${selectedTags.includes(tag) ? 'opacity-50' : 'bg-amber-400'} 
+                        className={`text-white border rounded-l-lg m-2 cursor-pointer pl-8 bg-cyan-900 border-r-8 border-cyan-950
+                            ${selectedTags.includes(tag) ? 'opacity-50' : 'bg-cyan-950'} 
                             hover:opacity-70`}
                         onClick={() => handleTagClick(tag)}
                     >
